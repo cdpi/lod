@@ -13,19 +13,19 @@ Lancer
 Fragile
 Dame
 Hourra
-Dégingandé
-Bidule
-Sans Ailes
-Confus
+Démêlé
+Engin
+Incapable de voler
+Perplexe
 Salon
 Héros
 Balise
-Chic
+Élégant
 Cuire
 Fracture
 Zip
-Stupide
+Idiot
 Trophée
 Défense
-Cookie
-Flexion
+Biscuit
+Flex
