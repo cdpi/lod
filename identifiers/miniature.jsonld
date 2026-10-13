@@ -1,0 +1,19 @@
+{
+"@context": "https://schema.org",
+"@type": "Thing",
+"name": "Miniature",
+"identifier":
+	[
+	{
+	"@type": "PropertyValue",
+	"propertyID": "Wikidata",
+	"value": "Q282129"
+	},
+	{
+	"@type": "PropertyValue",
+	"propertyID": "Wikidata",
+	"value": "Q111907565",
+	"alternateName": "Miniature Object"
+	}
+	]
+}
