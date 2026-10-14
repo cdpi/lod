@@ -1,3 +1,7 @@
 
+docs/
+identifiers/
+src/
+
 *.sqlite
 *.sql
