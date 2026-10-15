@@ -6,12 +6,12 @@
 	[
 	{
 	"@type": "PropertyValue",
-	"propertyID": "Wikidata",
+	"propertyID": "https://www.wikidata.org",
 	"value": "Q282129"
 	},
 	{
 	"@type": "PropertyValue",
-	"propertyID": "Wikidata",
+	"propertyID": "https://www.wikidata.org",
 	"value": "Q111907565",
 	"alternateName": "Miniature Object"
 	}

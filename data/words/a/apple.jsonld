@@ -6,7 +6,7 @@
 	[
 	{
 	"@type": "PropertyValue",
-	"propertyID": "Wikidata",
+	"propertyID": "https://www.wikidata.org",
 	"value": "Q89"
 	}
 	],

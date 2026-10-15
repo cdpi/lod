@@ -1,7 +1,11 @@
 
-docs/
-identifiers/
-src/
+dist/
+node_modules/
 
-*.sqlite
-*.sql
+temp/
+dev/
+dev.ts
+dev.d.ts
+dev.js
+
+*-lock.json

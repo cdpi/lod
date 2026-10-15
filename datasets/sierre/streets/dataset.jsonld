@@ -1,19 +1,19 @@
 {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "numberOfItems": 3,
-    "itemListElement": [
-        {
-            "@type": "AdministrativeArea",
-            "name": "Rue du Bourg"
-        },
-        {
-            "@type": "AdministrativeArea",
-            "name": "Promenade du Clos"
-        },
-        {
-            "@type": "AdministrativeArea",
-            "name": "Avenue de Rossfeld"
-        }
-    ]
+  "@type": "ItemList",
+  "numberOfItems": 3,
+  "itemListElement": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Rue du Bourg"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Promenade du Clos"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Avenue de Rossfeld"
+    }
+  ],
+  "@context": "https://schema.org"
 }
