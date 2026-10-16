@@ -1,11 +1,14 @@
 
-import { getPrompts } from './inktober.js';
+import { jsonld as inktober } from './inktober.js';
+import { jsonld as sierre } from './sierre.js';
 
-//import { jsonld as sierre } from './sierre.js';
+//inktober();
 //sierre();
 
-console.log(getPrompts().filter(prompt => prompt.date.getDate() > -2));
-
+//import ICAL from 'ical.js';
+//let calendar = new ICAL.Component([]);
+//let event = new ICAL.Event();
+//console.log(ICAL.stringify([calendar]));
 
 /*
 import { existsSync } from 'node:fs';

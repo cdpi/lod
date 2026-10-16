@@ -1,6 +1,5 @@
 
 import { writeFileSync } from 'node:fs';
-
 import { addContext, administrativeArea, dataDownload, itemList } from './schema.js';
 import { csv } from './util.js';
 

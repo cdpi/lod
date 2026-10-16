@@ -1,8 +1,12 @@
 
-import { listItem } from './schema.js';
+import { writeFileSync } from 'node:fs';
+import { listItem, itemList, addContext } from './schema.js';
 import { csv, uuid } from './util.js';
 
-function getPrompts()
+
+import ICAL from 'ical.js';
+
+function getPrompts():{date:Date, prompt:string}[]
 	{
 	return csv('data/inktober/prompts.csv').map(record =>
 		{
@@ -47,31 +51,27 @@ function wordsToEvents(words)
 	}
 */
 
-/*
-function wordToListItem(word, index)
+function prompts(prompts:string[]):void
 	{
-	
+	const items = prompts.map((prompt, index) => listItem(index + 1, prompt));
+
+	const list = itemList(items);
+
+	list.itemListOrder = 'https://schema.org/ItemListOrderAscending';
+
+	const jsonld = addContext(list);
+
+	writeFileSync('datasets/inktober/dataset.jsonld', JSON.stringify(jsonld, null, 2), 'utf8');
 	}
 
-function wordsToItemList(words)
+function jsonld():void
 	{
-	const itemList =
-		{
-		'@context': 'https://schema.org',
-		'@type': 'ItemList',
-		'numberOfItems': words.length,
-		'itemListOrder': 'https://schema.org/ItemListOrderAscending',
-		'itemListElement': words.map(wordToListItem)
-		};
+	const prompts2026 = getPrompts()
+		.filter(prompt => prompt.date.getFullYear() === 2026)
+		.map(prompt => prompt.prompt);
 
-	return itemList;
+	prompts(prompts2026);
 	}
-
-function wordsToJSONLD(words, pretty = false)
-	{
-	return JSON.stringify(wordsToItemList(words), null, pretty ? 2 : undefined);
-	}
-*/
 
 export
 	{
@@ -83,4 +83,5 @@ export
 	//wordToListItem,
 	//wordsToItemList,
 	//wordsToJSONLD
+	jsonld
 	};

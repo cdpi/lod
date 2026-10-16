@@ -8,6 +8,7 @@
 		"csv-parse": "^7.0.2",
 		"express": "^5.2.1",
 		"fast-xml-parser": "^5.11.1",
+		"ical.js": "^2.2.1",
 		"jimp": "^1.6.1",
 		"mqtt": "^5.15.2",
 		"nunjucks": "^3.2.4",
