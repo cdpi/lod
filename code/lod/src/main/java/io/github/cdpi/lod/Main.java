@@ -1,7 +1,9 @@
 package io.github.cdpi.lod;
 
-import java.io.IOException;
-import io.github.cdpi.lod.sierre.Sierre;
+import io.github.cdpi.agenda.Agenda;
+import io.github.cdpi.inktober.Inktober;
+import io.github.cdpi.sierre.Sierre;
+import io.github.cdpi.wikidata.Wikidata;
 
 public final class Main
 	{
@@ -10,34 +12,46 @@ public final class Main
 		throw new UnsupportedOperationException();
 		}
 
-	public static void inktober() throws IOException
+	public static void inktober()
 		{
-		//final var path = Path.of("data", "inktober", "prompts.csv");
-		//final var calendar = new Inktober().getCalendar(path);
-		//System.out.println(calendar);
+		final var calendar = new Inktober().getCalendar();
 
-		/*
-		new Inktober().getPrompts().forEach(prompt ->
+		final var agenda = new Agenda();
+
+		System.out.println(agenda.toString(calendar));
+		}
+
+	public static void sierre()
+		{
+		new Sierre().dev();
+		}
+
+	public static void wikidata()
+		{
+		final var wikidata = new Wikidata();
+
+		//wikidata.downloadEntity("Q23501"); // tomate
+		//wikidata.downloadEntity("Q14088"); // mozzarella
+		//wikidata.downloadEntity("Q170486"); // ham (mais c'est jambon en tranches !! pas que jambon)
+		//wikidata.downloadEntity("Q188655"); // salami
+
+		wikidata.dev();
+		}
+
+	public static void main(final String[] args)
+		{
+		try
 			{
-			System.out.println(prompt.label);
-			});
-		*/
-		}
+			//inktober();
+			//sierre();
+			//wikidata();
 
-	public static void sierre() throws IOException
-		{
-		Sierre.streets();
-		}
-
-	public static void main(final String[] args) throws Exception
-		{
-		//	/home/thefab/Projets/LOD/code/lod/src/main/java/io/github/cdpi/lod/Main.java
-
-		System.out.println("LOD");
-
-		//inktober();
-		sierre();
-
-		//System.out.println(new Wikidata().getEntity("Q2").labels);
+			final var site = new WebSite();
+			site.dev();
+			}
+		catch (final Throwable ex)
+			{
+			ex.printStackTrace();
+			}
 		}
 	}

@@ -1,7 +1,10 @@
-package io.github.cdpi.lod.sierre;
+package io.github.cdpi.geo;
 
+import java.util.stream.Stream;
 import org.apache.commons.csv.CSVRecord;
 import io.github.cdpi.schema.AdministrativeArea;
+import io.github.cdpi.schema.ItemList;
+import io.github.cdpi.schema.Thing;
 
 public class Street
 	{
@@ -14,6 +17,15 @@ public class Street
 		final var administrativeArea = new AdministrativeArea(name);
 
 		return  administrativeArea;
+		}
+
+	public static String toItemList(final Stream<Street> streets)
+		{
+		final var things = streets.map(Street::toAdministrativeArea).toList();
+
+		final var list = new ItemList<>(things);
+
+		return Thing.toString(list);
 		}
 
 	public static Street from(final CSVRecord record)

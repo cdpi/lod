@@ -1,8 +1,7 @@
 
-target
+data/wikidata/download/
 
 temp/
 
+target
 *.jar
-
-*-lock.json

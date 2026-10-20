@@ -1,7 +1,7 @@
 package io.github.cdpi.schema;
 
-import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
+import io.github.cdpi.util.LOD;
 
 public class Thing
 	{
@@ -16,19 +16,25 @@ public class Thing
 
 	public Thing()
 		{
+		type = "Thing";
 		}
 
 	public Thing(final String name)
 		{
+		this();
+
 		this.name = name;
+		}
+
+	public final String getName()
+		{
+		return name;
 		}
 
 	public static String toString(final Thing thing)
 		{
 		thing.context = CONTEXT;
 
-		final var gson = new GsonBuilder().setPrettyPrinting().create();
-
-		return gson.toJson(thing);
+		return LOD.toJSON(thing);
 		}
 	}

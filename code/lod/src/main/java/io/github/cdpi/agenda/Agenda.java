@@ -1,10 +1,9 @@
 package io.github.cdpi.agenda;
 
-import java.io.IOException;
 import java.io.StringWriter;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+import io.github.cdpi.util.LOD;
 import net.fortuna.ical4j.data.CalendarOutputter;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.component.VEvent;
@@ -14,8 +13,9 @@ import net.fortuna.ical4j.model.property.immutable.ImmutableCalScale;
 import net.fortuna.ical4j.model.property.immutable.ImmutableVersion;
 import net.fortuna.ical4j.util.UidGenerator;
 
-public class Agenda implements UidGenerator
+public class Agenda extends LOD implements UidGenerator
 	{
+	/*
 	public Calendar of(final LocalDate date, final String summary)
 		{
 		final var calendar = new Calendar();
@@ -32,6 +32,7 @@ public class Agenda implements UidGenerator
 
 		return calendar;
 		}
+	*/
 
 	public Calendar of(final List<Entry> entries)
 		{
@@ -43,7 +44,7 @@ public class Agenda implements UidGenerator
 
 		entries.forEach(entry ->
 			{
-			final var event = new VEvent(entry.getDate(), entry.getSummary());
+			final var event = new VEvent(entry.date, entry.summary);
 
 			event.add(generateUid());
 
@@ -53,16 +54,19 @@ public class Agenda implements UidGenerator
 		return calendar;
 		}
 
-	public String toString(final Calendar calendar) throws IOException
+	public String toString(final Calendar calendar)
 		{
-		try (final var writer = new StringWriter())
+		return io(() ->
 			{
-			final var output = new CalendarOutputter();
+			try (final var writer = new StringWriter())
+				{
+				final var output = new CalendarOutputter();
 
-			output.output(calendar, writer);
+				output.output(calendar, writer);
 
-			return writer.toString();
-			}
+				return writer.toString();
+				}
+			});
 		}
 
 	//FileOutputStream fout = new FileOutputStream("mycalendar.ics");
