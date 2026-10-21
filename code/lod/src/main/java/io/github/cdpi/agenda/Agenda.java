@@ -15,24 +15,6 @@ import net.fortuna.ical4j.util.UidGenerator;
 
 public class Agenda extends LOD implements UidGenerator
 	{
-	/*
-	public Calendar of(final LocalDate date, final String summary)
-		{
-		final var calendar = new Calendar();
-
-		calendar.add(new ProdId("-//CDPI//LOD 0.0.1//FR"));
-		calendar.add(ImmutableVersion.VERSION_2_0);
-		calendar.add(ImmutableCalScale.GREGORIAN);
-
-		final var event = new VEvent(date, summary);
-
-		event.add(generateUid());
-
-		calendar.add(event);
-
-		return calendar;
-		}
-	*/
 
 	public Calendar of(final List<Entry> entries)
 		{
@@ -44,7 +26,7 @@ public class Agenda extends LOD implements UidGenerator
 
 		entries.forEach(entry ->
 			{
-			final var event = new VEvent(entry.date, entry.summary);
+			final var event = new VEvent(entry.getDate(), entry.getSummary());
 
 			event.add(generateUid());
 

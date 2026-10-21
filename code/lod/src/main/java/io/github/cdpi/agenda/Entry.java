@@ -2,8 +2,9 @@ package io.github.cdpi.agenda;
 
 import java.time.LocalDate;
 
-public class Entry
+public interface Entry
 	{
-	public LocalDate date;
-	public String summary;
+	public LocalDate getDate();
+
+	public String getSummary();
 	}

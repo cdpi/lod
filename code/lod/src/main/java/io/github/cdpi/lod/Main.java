@@ -5,6 +5,7 @@ import io.github.cdpi.inktober.Inktober;
 import io.github.cdpi.sierre.Sierre;
 import io.github.cdpi.wikidata.Wikidata;
 
+@SuppressWarnings("unused")
 public final class Main
 	{
 	private Main()
@@ -14,11 +15,11 @@ public final class Main
 
 	public static void inktober()
 		{
-		final var calendar = new Inktober().getCalendar();
+		//final var calendar = new Inktober().getCalendar();
+		//final var agenda = new Agenda();
+		//System.out.println(agenda.toString(calendar));
 
-		final var agenda = new Agenda();
-
-		System.out.println(agenda.toString(calendar));
+		//new Inktober().getTraductions();
 		}
 
 	public static void sierre()
@@ -42,12 +43,12 @@ public final class Main
 		{
 		try
 			{
-			//inktober();
+			inktober();
 			//sierre();
 			//wikidata();
 
-			final var site = new WebSite();
-			site.dev();
+			//final var site = new WebSite();
+			//site.dev();
 			}
 		catch (final Throwable ex)
 			{
