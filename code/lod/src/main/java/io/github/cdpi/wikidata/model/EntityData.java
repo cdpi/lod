@@ -1,7 +1,6 @@
 package io.github.cdpi.wikidata.model;
 
 import java.util.Map;
-import io.github.cdpi.util.LOD;
 
 public class EntityData
 	{
@@ -9,6 +8,7 @@ public class EntityData
 
 	public static EntityData parse(final String json)
 		{
-		return LOD.fromJSON(json, EntityData.class);
+		//return LOD.fromJSON(json, EntityData.class);
+		throw new UnsupportedOperationException();
 		}
 	}

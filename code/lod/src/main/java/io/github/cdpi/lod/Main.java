@@ -1,8 +1,11 @@
 package io.github.cdpi.lod;
 
+import java.io.IOException;
 import io.github.cdpi.agenda.Agenda;
 import io.github.cdpi.inktober.Inktober;
+import io.github.cdpi.lod.web.WebSite;
 import io.github.cdpi.sierre.Sierre;
+import io.github.cdpi.sierre.bus.BusSierrois;
 import io.github.cdpi.wikidata.Wikidata;
 
 @SuppressWarnings("unused")
@@ -22,9 +25,10 @@ public final class Main
 		//new Inktober().getTraductions();
 		}
 
-	public static void sierre()
+	public static void sierre() throws IOException
 		{
-		new Sierre().dev();
+		//new Sierre().dev();
+		//BusSierrois.dev();
 		}
 
 	public static void wikidata()
@@ -36,16 +40,19 @@ public final class Main
 		//wikidata.downloadEntity("Q170486"); // ham (mais c'est jambon en tranches !! pas que jambon)
 		//wikidata.downloadEntity("Q188655"); // salami
 
-		wikidata.dev();
+		//wikidata.dev();
 		}
 
 	public static void main(final String[] args)
 		{
 		try
 			{
-			inktober();
+			//inktober();
 			//sierre();
 			//wikidata();
+
+			//SchemaOrg.dev();
+			//Parser.dev();
 
 			//final var site = new WebSite();
 			//site.dev();

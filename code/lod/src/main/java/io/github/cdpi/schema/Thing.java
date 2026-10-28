@@ -1,40 +1,21 @@
 package io.github.cdpi.schema;
 
-import com.google.gson.annotations.SerializedName;
-import io.github.cdpi.util.LOD;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Thing
 	{
-	public static final String CONTEXT = "https://schema.org";
+	//"@context": "https://schema.org/",
 
-	@SerializedName("@context")
-	public String context;
+	// Peut avoir plusieurs types
+	//"@type": ["HotelRoom","Product"],
 
-	@SerializedName("@type")
-	public String type;
-	public String name;
+	protected final Map<String, Object> properties = new HashMap<>();
 
-	public Thing()
+	public Thing set(final String key, final Object property)
 		{
-		type = "Thing";
-		}
+		properties.put(key, property);
 
-	public Thing(final String name)
-		{
-		this();
-
-		this.name = name;
-		}
-
-	public final String getName()
-		{
-		return name;
-		}
-
-	public static String toString(final Thing thing)
-		{
-		thing.context = CONTEXT;
-
-		return LOD.toJSON(thing);
+		return this;
 		}
 	}

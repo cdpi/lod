@@ -1,10 +1,8 @@
 package io.github.cdpi.agenda;
 
-import java.io.StringWriter;
 import java.util.List;
 import java.util.UUID;
 import io.github.cdpi.util.LOD;
-import net.fortuna.ical4j.data.CalendarOutputter;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.component.VEvent;
 import net.fortuna.ical4j.model.property.ProdId;
@@ -38,6 +36,7 @@ public class Agenda extends LOD implements UidGenerator
 
 	public String toString(final Calendar calendar)
 		{
+		/*
 		return io(() ->
 			{
 			try (final var writer = new StringWriter())
@@ -49,6 +48,8 @@ public class Agenda extends LOD implements UidGenerator
 				return writer.toString();
 				}
 			});
+		*/
+		throw new UnsupportedOperationException();
 		}
 
 	//FileOutputStream fout = new FileOutputStream("mycalendar.ics");

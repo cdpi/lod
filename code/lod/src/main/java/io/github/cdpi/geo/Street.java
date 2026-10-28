@@ -1,17 +1,12 @@
 package io.github.cdpi.geo;
 
-import java.util.stream.Stream;
-import org.apache.commons.csv.CSVRecord;
-import io.github.cdpi.schema.AdministrativeArea;
-import io.github.cdpi.schema.ItemList;
-import io.github.cdpi.schema.Thing;
-
 public class Street
 	{
 	public String slug;
 	public String name;
 	public Integer osm;
 
+	/*
 	public AdministrativeArea toAdministrativeArea()
 		{
 		final var administrativeArea = new AdministrativeArea(name);
@@ -43,4 +38,5 @@ public class Street
 
 		return street;
 		}
+	*/
 	}

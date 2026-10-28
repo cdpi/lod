@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.util.stream.Stream;
 import io.github.cdpi.util.CSV;
 
+@SuppressWarnings("deprecation")
 public class Inktober extends CSV
 	{
 	public Stream<Prompt> getPrompts(final Path path)
