@@ -1,14 +1,5 @@
 package io.github.cdpi.lod;
 
-import java.io.IOException;
-import io.github.cdpi.agenda.Agenda;
-import io.github.cdpi.inktober.Inktober;
-import io.github.cdpi.lod.web.WebSite;
-import io.github.cdpi.sierre.Sierre;
-import io.github.cdpi.sierre.bus.BusSierrois;
-import io.github.cdpi.wikidata.Wikidata;
-
-@SuppressWarnings("unused")
 public final class Main
 	{
 	private Main()
@@ -16,21 +7,17 @@ public final class Main
 		throw new UnsupportedOperationException();
 		}
 
+	/*
 	public static void inktober()
 		{
-		//final var calendar = new Inktober().getCalendar();
-		//final var agenda = new Agenda();
-		//System.out.println(agenda.toString(calendar));
-
-		//new Inktober().getTraductions();
+		final var calendar = new Inktober().getCalendar();
+		final var agenda = new Agenda();
+		System.out.println(agenda.toString(calendar));
+		new Inktober().getTraductions();
 		}
+	*/
 
-	public static void sierre() throws IOException
-		{
-		//new Sierre().dev();
-		//BusSierrois.dev();
-		}
-
+	/*
 	public static void wikidata()
 		{
 		final var wikidata = new Wikidata();
@@ -42,20 +29,16 @@ public final class Main
 
 		//wikidata.dev();
 		}
+	*/
 
 	public static void main(final String[] args)
 		{
 		try
 			{
-			//inktober();
-			//sierre();
-			//wikidata();
+			//final var lod = new LinkedOpenData();
 
-			//SchemaOrg.dev();
-			//Parser.dev();
-
-			//final var site = new WebSite();
-			//site.dev();
+			//lod.process(new Inktober());
+			//lod.process(new BusSierrois());
 			}
 		catch (final Throwable ex)
 			{

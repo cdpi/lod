@@ -3,5 +3,7 @@ data/wikidata/download/
 
 temp/
 
+Shadok.java
+
 target
 *.jar
